@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Flat Equalizer Hook</string>
+    <string name="xposed_description">Unlock premium features, remove ads and bypass root-detection for the Flat Equalizer app.</string>
+    <string-array name="xposed_scope">
+        <item>com.jazibkhan.equalizer</item>
+        <item>com.fzer0x.flatequalizerhook</item>
+    </string-array>
+</resources>
