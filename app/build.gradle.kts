@@ -23,7 +23,7 @@ android {
         applicationId = "com.fzer0x.flatequalizerhook"
         minSdk = 29
         targetSdk = 34
-        versionCode = 1
+        versionCode = 11
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
