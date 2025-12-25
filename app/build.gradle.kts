@@ -10,11 +10,11 @@ android {
 
     signingConfigs {
         create("release") {
-            if (project.hasProperty("MYAPP_RELEASE_STORE_FILE")) {
-                storeFile = rootProject.file(project.property("MYAPP_RELEASE_STORE_FILE") as String)
-                storePassword = project.property("MYAPP_RELEASE_STORE_PASSWORD") as String
-                keyAlias = project.property("MYAPP_RELEASE_KEY_ALIAS") as String
-                keyPassword = project.property("MYAPP_RELEASE_KEY_PASSWORD") as String
+            if (project.hasProperty("keystore.file")) {
+                storeFile = rootProject.file(project.property("keystore.file") as String)
+                storePassword = project.property("keystore.password") as String
+                keyAlias = project.property("keystore.key.alias") as String
+                keyPassword = project.property("keystore.key.password") as String
             }
         }
     }
@@ -22,7 +22,7 @@ android {
     defaultConfig {
         applicationId = "com.fzer0x.flatequalizerhook"
         minSdk = 29
-        targetSdk = 36
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -48,6 +48,14 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1"
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
