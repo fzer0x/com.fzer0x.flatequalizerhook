@@ -13,7 +13,7 @@ A Xposed module that unlocks premium features in the [Flat Equalizer](https://pl
 
 ## 🎯 Compatibility
 
-- **Flat Equalizer App:** This module is tested with version `6.3.5`. It may or may not work with other versions.
+- **Flat Equalizer App:** This module is tested with version `6.1.0 - 6.3.5`. It may or may not work with other versions.
 - **LSPosed:** Requires LSPosed framework to be installed.
 
 ## 🚀 Installation
