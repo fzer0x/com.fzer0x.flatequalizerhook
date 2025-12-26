@@ -18,7 +18,7 @@ A Xposed module that unlocks premium features in the [Flat Equalizer](https://pl
 
 ## 🚀 Installation
 
-1.  **Download:** Get the latest release from the [LSPosed Repository](https://github.com/LSPosed/LSPosed.github.io).
+1.  **Download:** Get the latest release from the [LSPosed Repository](https://github.com/Xposed-Modules-Repo/com.fzer0x.flatequalizerhook/releases).
 2.  **Activate Module:** Install the APK and activate it in the LSPosed Manager.
 3.  **Select Scope:** Ensure that `Flat Equalizer` is selected in the module's scope.
 4.  **Reboot:** Restart the `Flat Equalizer` app.
