@@ -22,9 +22,9 @@ android {
     defaultConfig {
         applicationId = "com.fzer0x.flatequalizerhook"
         minSdk = 29
-        targetSdk = 34
-        versionCode = 16
-        versionName = "1.4"
+        targetSdk = 35
+        versionCode = 17
+        versionName = "1.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,7 +36,15 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("release")
+            // Falls keine Signierung konfiguriert ist, nutzen wir debug zum Testen
+            if (project.hasProperty("keystore.file")) {
+                signingConfig = signingConfigs.getByName("release")
+            } else {
+                signingConfig = signingConfigs.getByName("debug")
+            }
+        }
+        debug {
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -48,9 +56,6 @@ android {
     }
     buildFeatures {
         compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
     }
     packaging {
         resources {
@@ -69,6 +74,9 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    // Hinzugefügt für zusätzliche Icons
+    implementation("androidx.compose.material:material-icons-extended")
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
